@@ -20,8 +20,12 @@ a {
 }
 h1 {
     font-size: 6rem;
-    line-height: 50%;
+    line-height: 60%;
     margin: 2%;
+}
+h1:last-of-type {
+    color: #000;
+    -webkit-text-stroke: 1px #fff;
 }
 h2 {
     font-size: 6rem;
@@ -87,7 +91,7 @@ main {
                 padding-top: 5%;
             }
         }
-        .at-center:last-of-type{
+        .at-center:last-of-type {
             margin: 100vh auto 40vh;
         }
     }
@@ -111,43 +115,43 @@ main {
         }
     }
 }
-#galery{
+#galery {
     position: relative;
     overflow: visible;
-    img{
+    img {
         position: absolute;
     }
-    img:nth-of-type(1){
+    img:nth-of-type(1) {
         top: -70vh;
-        right: 10vw;    
-        width: 25vw;    
+        right: 10vw;
+        width: 25vw;
     }
-    img:nth-of-type(2){
+    img:nth-of-type(2) {
         top: -20vh;
         left: 3vw;
         width: 20vw;
     }
-    img:nth-of-type(3){
+    img:nth-of-type(3) {
         top: 35vh;
         right: 0;
         width: 20vw;
     }
-    img:nth-of-type(4){
+    img:nth-of-type(4) {
         top: 65vh;
         left: 15vw;
         width: 25vw;
     }
-    img:nth-of-type(5){
+    img:nth-of-type(5) {
         top: 95vh;
         right: 15vw;
         width: 22vw;
     }
-    img:nth-of-type(6){
+    img:nth-of-type(6) {
         top: 130vh;
         left: 0;
         width: 20vw;
     }
-    img:nth-of-type(7){
+    img:nth-of-type(7) {
         bottom: -10vh;
         right: 20vw;
         width: 30vw;
@@ -174,11 +178,10 @@ main {
 }
 
 #poppybears {
-    overflow: visible;
+    overflow: hidden;
     height: 240vh;
     div:first-of-type {
         padding: 20vh 0;
-        min-height: unset;
         display: block;
         position: relative;
         width: 100vw;
@@ -187,8 +190,7 @@ main {
             top: -20vh;
             right: 0;
             width: 30vw;
-            animation: rotate 9s infinite;
-            animation-timing-function: linear;
+            animation: rotate 9s linear infinite;
         }
     }
     div:last-of-type {
@@ -212,8 +214,8 @@ main {
     }
 }
 #joinUs {
-    min-height: 90vh;
-    display: flex;
+    overflow: hidden;
+    min-height: 80vh;
     article {
         width: 50%;
         padding-top: 20vh;
@@ -227,8 +229,20 @@ main {
             padding: 2% 6%;
         }
     }
-    div{
-        min-height: unset;
+    .scrollingText {
+        display: block;
+        transform: rotate(45deg) translateX(15vw) translateY(-65vh);
+        animation: scroll 9s linear infinite;
+        p {
+            height: auto;
+            background-color: #fff;
+            color: #000;
+            font-size: 4rem;
+            span {
+                color: #fff;
+                -webkit-text-stroke: 2px #000;
+            }
+        }
     }
 }
 footer {
@@ -244,11 +258,11 @@ footer {
                 width: 3vw;
             }
         }
-            p{
-                margin: 5% 0;
-            }
+        p {
+            margin: 5% 0;
+        }
     }
-    div img{
+    div img {
         width: 5vw;
     }
 }
@@ -268,5 +282,14 @@ footer {
     }
     100% {
         transform: rotate(0deg);
+    }
+}
+
+@keyframes scroll {
+    0% {
+        text-indent: -15%;
+    }
+    100% {
+        text-indent: 15%;
     }
 }

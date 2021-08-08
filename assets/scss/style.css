@@ -25,8 +25,13 @@ a {
 
 h1 {
   font-size: 6rem;
-  line-height: 50%;
+  line-height: 60%;
   margin: 2%;
+}
+
+h1:last-of-type {
+  color: #000;
+  -webkit-text-stroke: 1px #fff;
 }
 
 h2 {
@@ -214,13 +219,12 @@ main .at-2col article p span {
 }
 
 #poppybears {
-  overflow: visible;
+  overflow: hidden;
   height: 240vh;
 }
 
 #poppybears div:first-of-type {
   padding: 20vh 0;
-  min-height: unset;
   display: block;
   position: relative;
   width: 100vw;
@@ -231,10 +235,8 @@ main .at-2col article p span {
   top: -20vh;
   right: 0;
   width: 30vw;
-  -webkit-animation: rotate 9s infinite;
-          animation: rotate 9s infinite;
-  -webkit-animation-timing-function: linear;
-          animation-timing-function: linear;
+  -webkit-animation: rotate 9s linear infinite;
+          animation: rotate 9s linear infinite;
 }
 
 #poppybears div:last-of-type {
@@ -260,10 +262,8 @@ main .at-2col article p span {
 }
 
 #joinUs {
-  min-height: 90vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  overflow: hidden;
+  min-height: 80vh;
 }
 
 #joinUs article {
@@ -282,8 +282,24 @@ main .at-2col article p span {
   padding: 2% 6%;
 }
 
-#joinUs div {
-  min-height: unset;
+#joinUs .scrollingText {
+  display: block;
+  -webkit-transform: rotate(45deg) translateX(15vw) translateY(-65vh);
+          transform: rotate(45deg) translateX(15vw) translateY(-65vh);
+  -webkit-animation: scroll 9s linear infinite;
+          animation: scroll 9s linear infinite;
+}
+
+#joinUs .scrollingText p {
+  height: auto;
+  background-color: #fff;
+  color: #000;
+  font-size: 4rem;
+}
+
+#joinUs .scrollingText p span {
+  color: #fff;
+  -webkit-text-stroke: 2px #000;
 }
 
 footer {
@@ -363,6 +379,24 @@ footer div img {
   100% {
     -webkit-transform: rotate(0deg);
             transform: rotate(0deg);
+  }
+}
+
+@-webkit-keyframes scroll {
+  0% {
+    text-indent: -15%;
+  }
+  100% {
+    text-indent: 15%;
+  }
+}
+
+@keyframes scroll {
+  0% {
+    text-indent: -15%;
+  }
+  100% {
+    text-indent: 15%;
   }
 }
 /*# sourceMappingURL=style.css.map */
